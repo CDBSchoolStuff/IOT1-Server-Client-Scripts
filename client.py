@@ -1,4 +1,5 @@
 from socket import *
+from datetime import datetime
 
 serverName = '10.136.137.71'
 serverPort = 12000
@@ -11,6 +12,28 @@ print ("-----------------------------")
 print ()
 print ()
 
+
+observationDict = {
+    "spiller": 0,
+    "tidspunkt": 0,
+    "observation": "",
+    "observant": ""
+}
+
 while True:
-    message = input('Skriv noget til serveren: ')
+    # message = input('Skriv noget til serveren: ')
+    # clientSocket.sendto(message.encode(),(serverName, serverPort))
+
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+
+    observationDict["spiller"] = input('Spiller: ')
+    observationDict["tidspunkt"] = current_time
+    observationDict["observation"] = input('Observation: ')
+    observationDict["observant"] = input('Observant: ')
+
+    print(observationDict)
+
+    message = str(observationDict)
+
     clientSocket.sendto(message.encode(),(serverName, serverPort))

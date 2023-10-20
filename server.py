@@ -11,7 +11,11 @@ print ("-------------------------------")
 print ()
 print ()
 
+
 while True:
     message, klient = serverSocket.recvfrom(2048)
-    print(message.decode())
+    receivedDict = message.decode()
+
+
+    print(receivedDict)
     print ()
