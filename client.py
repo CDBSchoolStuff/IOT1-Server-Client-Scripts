@@ -1,7 +1,7 @@
 from socket import *
 from datetime import datetime
 
-serverName = '10.136.138.161'
+serverName = '10.0.0.5'
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
 
