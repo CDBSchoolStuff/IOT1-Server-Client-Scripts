@@ -1,17 +1,16 @@
 from socket import *
 from datetime import datetime
 
-serverName = '10.136.137.71'
+serverName = '10.136.138.161'
 serverPort = 12000
 clientSocket = socket(AF_INET, SOCK_DGRAM)
 
 print ()
-print ("-----------------------------")
-print ("Klienten er klar til at sende")
-print ("-----------------------------")
+print ("-------------------------------")
+print ("Klar til at sende observationer")
+print ("-------------------------------")
 print ()
 print ()
-
 
 observationDict = {
     "spiller": 0,
@@ -19,6 +18,8 @@ observationDict = {
     "observation": "",
     "observant": ""
 }
+
+observationDict["observant"] = input('Observant: ')
 
 while True:
     # message = input('Skriv noget til serveren: ')
@@ -30,7 +31,6 @@ while True:
     observationDict["spiller"] = input('Spiller: ')
     observationDict["tidspunkt"] = current_time
     observationDict["observation"] = input('Observation: ')
-    observationDict["observant"] = input('Observant: ')
 
     print(observationDict)
 
